@@ -1,10 +1,11 @@
 import React from 'react';
 import './Header.css';
 import MenuIcon from "@material-ui/icons/Menu";
-import {IconButton} from "@material-ui/core";
+import {Avatar, IconButton} from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-
+import AppsIcon from '@material-ui/icons/Apps';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 function Header() {
     return (
         <div className = "header">
@@ -22,6 +23,13 @@ function Header() {
 
             </div>
              <div className="header_right">
+                 <IconButton>
+                     <AppsIcon />
+                 </IconButton>
+                 <IconButton>
+                     <NotificationsIcon />
+                 </IconButton>
+                 <Avatar />
             
         </div>
         </div>
