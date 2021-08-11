@@ -16,7 +16,7 @@ function App() {
     <Router>
     <div className="app">
       <Header />
-      <div className = "app_body"></div>
+      <div className = "app_body">
         <Sidebar />
 
         <Switch>
@@ -27,7 +27,7 @@ function App() {
             <EmailList/>
           </Route>
         </Switch>
-
+        </div>
       
     </div>
     </Router>
