@@ -4,6 +4,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Mail from "./Mail";
 import EmailList from "./EmailList";
+import EmailRow from "./EmailRow";
 import {
   BrowserRouter as Router,
   Switch,

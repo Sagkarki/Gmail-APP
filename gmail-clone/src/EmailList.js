@@ -51,6 +51,9 @@ function EmailList() {
                <Section Icon = {LocalOfferIcon} title = 'Primary' color="green"/>
 
             </div>
+            <div className="emailList_list">
+                
+            </div>
         </div>
     )
 }
