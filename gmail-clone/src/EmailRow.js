@@ -2,7 +2,7 @@ import React from 'react';
 import Checkbox from "@material-ui/core/Checkbox";
 import {IconButton} from "@material-ui/core";
 import StartBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
-import LabelImportantOutlinedIcon from "@material-ui/icons/LabelImportantOutlinedIcon";
+import LabelImportantOutlinedIcon from "@material-ui/icons/LabelImportantOutlined";
 
 
 import './EmailRow.css';
@@ -27,7 +27,11 @@ function EmailRow({id, title, subject, description, time, }) {
             </h3>
 
             <div className="emailRow_message">
-                <h4>Subject</h4>
+                <h4>{Subject}
+                <span className="emailRow_description">
+                    {description}
+                </span>
+                </h4>
             </div>
 
             <div className="emailRow_description">
@@ -41,4 +45,4 @@ function EmailRow({id, title, subject, description, time, }) {
     );
 }
 
-export default EmailRow
+export default EmailRow;
