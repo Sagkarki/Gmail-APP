@@ -23,14 +23,14 @@ function EmailRow({id, title, subject, description, time, }) {
             </div>
 
             <h3 className="emailRow_title">
-                {title}
+                {title} 
             </h3>
 
             <div className="emailRow_message">
                 <h4>{Subject}
                 <span className="emailRow_description">
                     {description}
-                </span>
+77                </span>
                 </h4>
             </div>
 
