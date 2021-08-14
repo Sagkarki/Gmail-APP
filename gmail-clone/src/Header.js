@@ -1,39 +1,54 @@
-import React from 'react';
-import './Header.css';
+import React from "react";
+import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
-import {Avatar, IconButton} from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import AppsIcon from '@material-ui/icons/Apps';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-function Header() {
-    return (
-        <div className = "header">
-            <div className="header_left">
-                <IconButton>
-                <MenuIcon />
-                </IconButton>
-                <img src ="https://www.google.com/url?sa=i&url=https%3A%2F%2Fc.mi.com%2Fforum.php%3Fmod%3Dviewthread%26tid%3D2185833%26aid%3D4273335%26from%3Dalbum%26page%3D1&psig=AOvVaw2OoQwRkxKKkQlzjRXDMcye&ust=1628644441289000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNiHgb-jpfICFQAAAAAdAAAAABAJ" alt="" />
-                    
-            </div>
-            <div className = "header_middle">
-                <SearchIcon/>
-                <input placeholder = "Search mail" type ="text" />
-                <ArrowDropDownIcon className = "header_inputCaret" />
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import AppsIcon from "@material-ui/icons/Apps";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./features/userSlice";
+import { auth } from "./firebase";
 
-            </div>
-             <div className="header_right">
-                 <IconButton>
-                     <AppsIcon />
-                 </IconButton>
-                 <IconButton>
-                     <NotificationsIcon />
-                 </IconButton>
-                 <Avatar />
-            
-        </div>
-        </div>
-    );
+function Header() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
+
+  return (
+    <div className="header">
+      <div className="header__left">
+        <IconButton>
+          <MenuIcon />
+        </IconButton>
+        <img
+          src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png"
+          alt=""
+        />
+      </div>
+
+      <div className="header__middle">
+        <SearchIcon />
+        <input placeholder="Search mail" type="text" />
+        <ArrowDropDownIcon className="header__inputCaret" />
+      </div>
+
+      <div className="header__right">
+        <IconButton>
+          <AppsIcon />
+        </IconButton>
+        <IconButton>
+          <NotificationsIcon />
+        </IconButton>
+        <Avatar onClick={signOut} src={user?.photoUrl} />
+      </div>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
