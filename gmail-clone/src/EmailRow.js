@@ -35,11 +35,7 @@ function EmailRow({id, title, subject, description, time, }) {
             </div>
 
             <div className="emailRow_description">
-                <EmailRow
-                title="First email "
-                subject=" Hello everybody! This is my first email."
-                description="This is a test"
-                />
+                
             </div>
         </div>
     );
